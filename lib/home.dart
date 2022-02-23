@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center (
         child: Text(
-          'Let\'s get cooking ',
+          'Let\'s get cooking 👨‍🍳',
           style: Theme.of(context).textTheme.headline1
         )
       ),
