@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'fooderlich_theme.dart';
 
 class Card1 extends StatelessWidget {
   const Card1({Key? key}) : super(key: key);
@@ -20,7 +21,22 @@ class Card1 extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+
+      child:Stack (
+        children: [
+          Text(category, style: 
+          FooderlichTheme.darkTextTheme.bodyText1),
+          Text(title, style: 
+          FooderlichTheme.darkTextTheme.headline5),
+          Text(description, style: 
+          FooderlichTheme.darkTextTheme.bodyText1),
+          Text(chef, style: 
+          FooderlichTheme.darkTextTheme.bodyText1),
+        ],
       ),
+      
+      ),
+
     );
   }
 }
