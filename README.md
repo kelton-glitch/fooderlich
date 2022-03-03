@@ -1,6 +1,6 @@
 # fooderlich
 
-A new Flutter project.
+An adaptible author and recipe card oriented app.
 
 ## Getting Started
 
