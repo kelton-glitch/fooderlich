@@ -35,12 +35,12 @@ class _HomeState extends State<Home> {
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
+        items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard), label: 'Card1'),
-          const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard), label: 'Card2'),
-          const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard), label: 'Card3'),
         ],
       ),
