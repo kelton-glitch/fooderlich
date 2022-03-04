@@ -5,7 +5,8 @@ class Card3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
+      child: Container(
       constraints: const BoxConstraints.expand(width: 350,
       height: 450),
       decoration: const BoxDecoration(
@@ -17,11 +18,17 @@ class Card3 extends StatelessWidget {
       child: Stack(
         children:[
           //TODO 5: add dark overlay BoxDecoration
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.6),
+              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            ),
+          ),
           //TODO6: Add Container, Column, Icon and Text
           //TODO 7: Add Center widget with Chip widget children
         ],
       ),
-    
+      ),
     );
   }
 }
