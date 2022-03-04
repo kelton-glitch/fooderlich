@@ -3,7 +3,7 @@ import 'fooderlich_theme.dart';
 import 'home.dart';
 
 void main() {
-  runApp( Fooderlich());
+  runApp(Fooderlich());
 }
 
 class Fooderlich extends StatelessWidget {
