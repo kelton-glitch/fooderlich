@@ -29,7 +29,7 @@ class Card3 extends StatelessWidget {
             ),
           ),
 
-          //TODO6: Add Container, Column, Icon and Text
+          //TODO 6: Add Container, Column, Icon and Text
           Container(
             padding: const EdgeInsets.all(16),
 
@@ -45,8 +45,8 @@ class Card3 extends StatelessWidget {
               ],
             ),
           ),
-          //TODO 7: Add Center widget with Chip widget children
 
+          //TODO 7: Add Center widget with Chip widget children
           Center(
             child: Wrap(
               alignment: WrapAlignment.start,
