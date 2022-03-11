@@ -57,8 +57,7 @@ class _AuthorCardState extends State<AuthorCard> {
               setState(() {
                 
               _isFavorited = !_isFavorited;
-              }
-              );
+              });
             },
           )
         ],
