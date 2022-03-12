@@ -8,7 +8,7 @@ class CircleImage extends StatelessWidget {
   }) : super(key: key);
 
   final double imageRadius;
-  final ImageProvider imageProvider;
+  final ImageProvider? imageProvider;
 
   @override
   Widget build(BuildContext context) {
