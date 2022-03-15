@@ -37,7 +37,8 @@ class _AuthorCardState extends State<AuthorCard> {
                ),
             const SizedBox(width: 8),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: 
+              CrossAxisAlignment.start,
               children: [
                 Text(
                   widget.authorName,
@@ -54,7 +55,8 @@ class _AuthorCardState extends State<AuthorCard> {
 
           IconButton(
             icon:  Icon(
-                _isFavorited ? Icons.favorite : Icons.favorite_border),
+                _isFavorited ? Icons.favorite 
+                : Icons.favorite_border),
             iconSize: 30,
             color: Colors.red[400],
             onPressed: () {

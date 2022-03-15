@@ -15,7 +15,6 @@ class CircleImage extends StatelessWidget {
     return CircleAvatar(
       backgroundColor: Colors.white,
       radius: imageRadius,
-
       child: CircleAvatar(
         radius: imageRadius - 5,
         backgroundImage: imageProvider,
