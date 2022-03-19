@@ -8,7 +8,7 @@ class ExploreScreen extends StatelessWidget {
   ExploreScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // 2
+    
     // TODO 1: Add TodayRecipeListView FutureBuilder
     return FutureBuilder(
         // 2
