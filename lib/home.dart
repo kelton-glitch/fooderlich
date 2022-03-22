@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/components/card1.dart';
+/* import 'package:fooderlich/components/card1.dart';
 import 'package:fooderlich/components/card2.dart';
-import 'package:fooderlich/components/card3.dart';
+import 'package:fooderlich/components/card3.dart'; */
 import 'package:fooderlich/screens/explore_screen.dart';
 
 class Home extends StatefulWidget {
