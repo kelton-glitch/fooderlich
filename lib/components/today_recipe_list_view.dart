@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fooderlich/components/card3.dart';
-import 'package:fooderlich/components/card2.dart';
-import 'package:fooderlich/components/card1.dart';
+import '../components/components.dart';
 import 'package:fooderlich/models/explore_recipe.dart';
 import '../models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
+
   final List<ExploreRecipe> recipes;
 
   const TodayRecipeListView({Key? key, required this.recipes})
@@ -23,7 +22,6 @@ class TodayRecipeListView extends StatelessWidget {
             const SizedBox(height: 16),
             Container(
                 height: 400,
-                //TODO: Add ListView Here
                 color: Colors.transparent,
                 child: ListView.separated(
                     scrollDirection: Axis.horizontal,
