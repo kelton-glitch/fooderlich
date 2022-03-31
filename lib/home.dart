@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-/* import 'package:fooderlich/components/card1.dart';
-import 'package:fooderlich/components/card2.dart';
-import 'package:fooderlich/components/card3.dart'; */
-import 'package:fooderlich/screens/explore_screen.dart';
+import 'package:fooderlich/card1.dart';
+import 'package:fooderlich/card2.dart';
+import 'package:fooderlich/card3.dart'; 
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,11 +14,9 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    ExploreScreen(),
-    // TODO: Replace with RecipeScreen
-
-    Container(color: Colors.green),
-    Container(color: Colors.blue)
+      const Card1(),
+        Container(color: Colors.green),
+        Container(color: Colors.blue)
   ];
 
   void _onItemTapped(int index) {
@@ -41,15 +38,15 @@ class _HomeState extends State<Home> {
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
+              icon: Icon(Icons.card_giftcard),
                label: 'Explore'
                ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.book), 
+              icon: Icon(Icons.card_giftcard), 
               label: 'Recipes'
               ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list), 
+              icon: Icon(Icons.card_giftcard),
               label: 'To Buy'
               ),
         ],
