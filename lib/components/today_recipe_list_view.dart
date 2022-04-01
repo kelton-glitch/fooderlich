@@ -7,7 +7,7 @@ class TodayRecipeListView extends StatelessWidget {
 
   final List<ExploreRecipe> recipes;
 
-  const TodayRecipeListView({Key? key, required this.recipes})
+  const TodayRecipeListView({Key? key, this.recipes})
       : super(key: key);
 
   @override
