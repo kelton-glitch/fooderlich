@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
       const Card1(),
-        Container(color: Colors.green),
+      const Card2(),
         Container(color: Colors.blue)
   ];
 
