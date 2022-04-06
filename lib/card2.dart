@@ -1,12 +1,9 @@
-/* import 'package:flutter/material.dart';
-
+ import 'package:flutter/material.dart';
 import 'fooderlich_theme.dart';
 import 'author_card.dart';
 
 class Card2 extends StatelessWidget {
-  const Card2({
-    Key? key,
-  }) : super(key: key);
+  const Card2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,47 +15,21 @@ class Card2 extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(recipe.backgroundImage),
+            image: AssetImage('assets/mag5.png'),
             fit: BoxFit.cover,
           ),
           borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Column(
           children: [
-            AuthorCard(
-              authorName: recipe.authorName,
-              title: recipe.role,
-              imageProvider: AssetImage(recipe.profileImage),
-            ),
-            Expanded(
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: 16,
-                    right: 16,
-                    child: Text(
-                      recipe.title,
-                      style: FooderlichTheme.lightTextTheme.headline1,
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 70,
-                    left: 16,
-                    child: RotatedBox(
-                      quarterTurns: 3,
-                      child: Text(
-                        recipe.subtitle,
-                        style: FooderlichTheme.lightTextTheme.headline1,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            //TODO 1: add author information
+            //TODO 4: add Positioned Text
+              
+            
           ],
         ),
       ),
     );
   }
 }
- */
+ 
