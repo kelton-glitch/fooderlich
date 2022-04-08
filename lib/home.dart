@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
       const Card1(),
       const Card2(),
-        Container(color: Colors.blue)
+      const Card3(),
   ];
 
   void _onItemTapped(int index) {

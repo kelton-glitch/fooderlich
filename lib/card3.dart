@@ -1,31 +1,9 @@
-/* import 'package:flutter/material.dart';
-
+ import 'package:flutter/material.dart';
 import 'fooderlich_theme.dart';
-import 'models/models.dart';
 
 class Card3 extends StatelessWidget {
-  final ExploreRecipe recipe;
 
-  const Card3({
-    Key? key,
-    required this.recipe,
-  }) : super(key: key);
-
-  List<Widget> createTagChips() {
-    final chips = <Widget>[];
-    recipe.tags.take(6).forEach((element) {
-      final chip = Chip(
-        label: Text(
-          element,
-          style: FooderlichTheme.darkTextTheme.bodyText1,
-        ),
-        backgroundColor: Colors.black.withOpacity(0.7),
-      );
-      chips.add(chip);
-    });
-
-    return chips;
-  }
+  const Card3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +13,12 @@ class Card3 extends StatelessWidget {
           width: 350,
           height: 450,
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(recipe.backgroundImage),
+            image: AssetImage('assets/mag2.png'),
             fit: BoxFit.cover,
           ),
-          borderRadius: const BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(10.0),
           ),
         ),
@@ -63,7 +41,7 @@ class Card3 extends StatelessWidget {
                     size: 40,
                   ),
                   const SizedBox(height: 8),
-                  Text(recipe.title,
+                  Text('Recipe Trends',
                       style: FooderlichTheme.darkTextTheme.headline2),
                   const SizedBox(height: 30),
                 ],
@@ -73,13 +51,39 @@ class Card3 extends StatelessWidget {
               child: Wrap(
                   alignment: WrapAlignment.start,
                   spacing: 12,
-                  runSpacing: 12,
-                  children: createTagChips()),
-            ),
-          ],
-        ),
-      ),
-    );
+                  children: [
+                    Chip(
+                      label: Text('Healthy',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                      backgroundColor: Colors.black.withOpacity(0.7),
+                      onDeleted:(){
+                        print('delete');
+                      } ,),
+
+                      Chip(
+                      label: Text('Vegan',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                      backgroundColor: Colors.black.withOpacity(0.7),
+                      onDeleted:(){
+                        print('delete');
+                      } ,),
+
+                      Chip(
+                      label: Text('Carrots',
+                      style: FooderlichTheme.darkTextTheme.bodyText1),
+                      backgroundColor: Colors.black.withOpacity(0.7),
+                      onDeleted:(){
+                        print('delete');
+                      },
+                    )
+                  ],
+                ),
+          
+              ),
+            ],
+          ),
+        )
+      );
+    }
   }
-}
- */
+ 
