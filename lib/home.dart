@@ -39,15 +39,15 @@ class _HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard),
-               label: 'Explore'
+               label: 'Card1'
                ),
             BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard), 
-              label: 'Recipes'
+              label: 'Card2'
               ),
             BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard),
-              label: 'To Buy'
+              label: 'Card3'
               ),
         ],
       ),
