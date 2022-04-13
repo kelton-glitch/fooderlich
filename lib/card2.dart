@@ -13,19 +13,47 @@ class Card2 extends StatelessWidget {
           width: 350,
           height: 450,
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/mag5.png'),
             fit: BoxFit.cover,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Column(
           children: [
-            //TODO 1: add author information
+            ///TODO1: add author information
+            const AuthorCard(authorName: 'Kamgo Elton',
+             title: 'Smoothie Connoisseur', 
+             imageProvider: AssetImage('assets/author_katz.jpg')),
             //TODO 4: add Positioned Text
+
+            Expanded(
+              child: Stack(
+                children: [
+                  Positioned(
+                    bottom: 16,
+                    right: 16,
+                    child: Text(
+                      'Recipe',
+                      style: FooderlichTheme.lightTextTheme.headline1,
+                    ),
+                  ),
+
+                  Positioned(
+                    bottom:70,
+                    left: 16,
+                    child: RotatedBox(quarterTurns: 3,
+                    child: Text(
+                      'Smoothies',
+                      style: FooderlichTheme.lightTextTheme.headline1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               
-            
+            ),
           ],
         ),
       ),
