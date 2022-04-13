@@ -54,6 +54,7 @@ class Card2 extends StatelessWidget {
               ),
               
             ),
+
           ],
         ),
       ),
