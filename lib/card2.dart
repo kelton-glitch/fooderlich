@@ -23,7 +23,7 @@ class Card2 extends StatelessWidget {
         child: Column(
           children: [
             ///TODO1: add author information
-             AuthorCard(authorName: 'Kamgo Elton',
+            const AuthorCard(authorName: 'Kamgo Elton',
              title: 'Smoothie Connoisseur', 
              imageProvider: AssetImage('assets/author_katz.jpeg')),
             //TODO 4: add Positioned Text
