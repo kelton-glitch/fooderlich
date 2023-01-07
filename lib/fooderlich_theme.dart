@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FooderlichTheme{
-  // 1
+class FooderlichTheme {
   static TextTheme lightTextTheme = TextTheme(
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
@@ -30,7 +29,7 @@ class FooderlichTheme{
       color: Colors.black,
     ),
   );
-  //2
+
   static TextTheme darkTextTheme = TextTheme(
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
@@ -58,12 +57,14 @@ class FooderlichTheme{
       color: Colors.white,
     ),
   );
-  // 3
+
   static ThemeData light() {
     return ThemeData(
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateColor.resolveWith((states) => Colors.black)
+        fillColor: MaterialStateColor.resolveWith((states) {
+          return Colors.black;
+        }),
       ),
       appBarTheme: const AppBarTheme(
         foregroundColor: Colors.black,
@@ -79,7 +80,7 @@ class FooderlichTheme{
       textTheme: lightTextTheme,
     );
   }
-  // 4
+
   static ThemeData dark() {
     return ThemeData(
       brightness: Brightness.dark,
