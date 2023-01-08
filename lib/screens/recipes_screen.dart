@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
 import '../api/mock_fooderlich_service.dart';
-//import '../components/components.dart';
+import '../components/components.dart';
 
 class RecipeScreen extends StatelessWidget {
   //1
@@ -21,7 +21,7 @@ class RecipeScreen extends StatelessWidget {
     {
     //TODO: Add RecipesGridView Here
     //5
-    return const Center( child: Text('Recipes Screen'));
+    return RecipesGridView(recipes: snapshot.data ?? []);
     } else {
           //6
             return const Center (
