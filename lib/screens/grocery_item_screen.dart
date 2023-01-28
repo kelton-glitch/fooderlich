@@ -61,7 +61,7 @@ class GroceryItemScreen extends StatefulWidget {
         });
       });
     }
-    //Disposes the TextEditingCOntroller when no longer needed
+    //Disposes the TextEditingController when no longer needed
     @override
     void dispose(){
       _nameController.dispose();
@@ -186,7 +186,7 @@ class GroceryItemScreen extends StatefulWidget {
               //4
               ChoiceChip(
                 //5
-                selectedColor: Colors.black,
+                selectedColor: _currentColor,
                 //6
                 selected: _importance == Importance.low,
                 label: const Text(
@@ -199,7 +199,7 @@ class GroceryItemScreen extends StatefulWidget {
                 },
               ),
               ChoiceChip(
-                selectedColor: Colors.black,
+                selectedColor: _currentColor,
                 selected: _importance == Importance.medium,
                 label: const Text(
                   'medium',
@@ -211,7 +211,7 @@ class GroceryItemScreen extends StatefulWidget {
                 },
               ),
               ChoiceChip(
-                selectedColor: Colors.black,
+                selectedColor: _currentColor,
                 selected: _importance == Importance.high,
                 label: const Text(
                   'high',

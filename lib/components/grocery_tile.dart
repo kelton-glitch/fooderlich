@@ -20,17 +20,87 @@ class GroceryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: Change this widget
-    return Container(
+    return SizedBox(
       height: 100.0,
-      //TODO: Replace this color
-      color: Colors.red,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          //TODO: Add Row to group (name, date, importance)
+          Row(
+            children: [
+              Container(width: 5.0, color: item.color),
+              const SizedBox(width: 16.0),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:[
+                  Text(
+                    item.name,
+                    style: GoogleFonts.lato(
+                      decoration: textDecoration,
+                      fontSize: 21.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4.0),
+                  buildDate(),
+                  const SizedBox(height: 4.0),
+                  buildImportance(),
+                ],
+              )
+            ],
+          ),
+          //TODO: Add Row to group (quantity, checkbox)
+        ],
+      ),
     );
   }
-  //TODO: Add buildImportance()
+  //buildImportance()
+  Widget buildImportance() {
+    if (item.importance == Importance.low) {
+      return Text(
+          'Low',
+        style: GoogleFonts.lato(decoration: textDecoration),
+      );
+    } else if (item.importance == Importance.medium) {
+      return Text(
+        'Medium',
+        style: GoogleFonts.lato(
+          fontWeight: FontWeight.w800,
+          decoration: textDecoration
+        )
+      );
+    } else if (item.importance == Importance.high) {
+      return Text(
+        'High',
+        style: GoogleFonts.lato(
+          color: Colors.red,
+          fontWeight: FontWeight.w900,
+          decoration: textDecoration,
+        ),
+      );
+    } else {
+      throw Exception('This importance type does not exist');
+    }
+  }
 
-  //TODO: Add buildDate()
+  //buildDate()
 
-  //TODO: Add buildCheckbox()
+  Widget buildDate() {
+    final dateFormatter = DateFormat('MMM dd h:mm a');
+    final dateString = dateFormatter.format(item.date);
+    return Text(
+      dateString,
+      style: TextStyle(decoration: textDecoration)
+    );
+  }
+
+  //buildCheckbox()
+  Widget buildCheckbox(){
+    return Checkbox(
+        value: item.isComplete,
+        onChanged: onComplete
+    );
+  }
 
 }
