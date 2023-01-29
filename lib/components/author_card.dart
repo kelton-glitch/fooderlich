@@ -29,28 +29,26 @@ class AuthorCardState extends State<AuthorCard> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              CircleImage(
-                imageProvider: widget.imageProvider,
-                imageRadius: 28,
-              ),
-              const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.authorName,
-                    style: FooderlichTheme.lightTextTheme.headline2,
-                  ),
-                  Text(
-                    widget.title,
-                    style: FooderlichTheme.lightTextTheme.headline3,
-                  )
-                ],
-              ),
-            ],
-          ),
+          Row(children: [
+            CircleImage(
+              imageProvider: widget.imageProvider,
+              imageRadius: 28,
+            ),
+            const SizedBox(width: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.authorName,
+                  style: FooderlichTheme.lightTextTheme.headline2,
+                ),
+                Text(
+                  widget.title,
+                  style: FooderlichTheme.lightTextTheme.headline3,
+                )
+              ],
+            ),
+          ]),
           IconButton(
             icon: Icon(_isFavorited ? Icons.favorite : Icons.favorite_border),
             iconSize: 30,
