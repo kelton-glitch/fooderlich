@@ -11,11 +11,12 @@ class GroceryManager extends ChangeNotifier {
     _groceryItems.removeAt(index);
     notifyListeners();
   }
+
   //4
   void addItem(GroceryItem item) {
     _groceryItems.add(item);
     notifyListeners();
-}
+  }
 
   //5
   void updateItem(GroceryItem item, int index) {

@@ -17,11 +17,11 @@ class HomeState extends State<Home> {
 
   static List<Widget> pages = <Widget>[
     // TODO: Replace with ExploreScreen
-  const ExploreScreen(),
+    const ExploreScreen(),
     // TODO: Replace with RecipesScreen
     RecipeScreen(),
     //TODO: Replace with GroceryScreen
-   const GroceryScreen(),
+    const GroceryScreen(),
   ];
 
   // void _onItemTapped(int index) {
@@ -41,12 +41,12 @@ class HomeState extends State<Home> {
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
-        //TODO: Replace body
-        body: pages[tabManager.selectedTab],
+        body: IndexedStack(index: tabManager.selectedTab, children: pages,),
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
+          selectedItemColor:
+              Theme.of(context).textSelectionTheme.selectionColor,
           currentIndex: tabManager.selectedTab,
-          onTap: (index){
+          onTap: (index) {
             tabManager.goToTab(index);
           },
           items: const [
@@ -65,7 +65,6 @@ class HomeState extends State<Home> {
           ],
         ),
       );
-    }
-    );
+    });
   }
 }

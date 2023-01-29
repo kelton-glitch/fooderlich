@@ -1,16 +1,16 @@
 import 'package:flutter/painting.dart';
 
-  //1
-  enum Importance {
-    low,
-    medium,
-    high,
-  }
+//1
+enum Importance {
+  low,
+  medium,
+  high,
+}
 
-  class GroceryItem{
-    //2
-    final String id;
-    //3
+class GroceryItem {
+  //2
+  final String id;
+  //3
   final String name;
   final Importance importance;
   final Color color;
@@ -19,7 +19,7 @@ import 'package:flutter/painting.dart';
   final bool isComplete;
 
   GroceryItem({
-      required this.id,
+    required this.id,
     required this.name,
     required this.importance,
     required this.color,
@@ -45,7 +45,6 @@ import 'package:flutter/painting.dart';
         color: color ?? this.color,
         quantity: quantity ?? this.quantity,
         date: date ?? this.date,
-      isComplete: isComplete ?? this.isComplete
-    );
+        isComplete: isComplete ?? this.isComplete);
   }
-  }
+}

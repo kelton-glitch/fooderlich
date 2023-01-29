@@ -10,7 +10,7 @@ class EmptyGroceryScreen extends StatelessWidget {
     //TODO: Replace and add layout widgets
     return Padding(
       padding: const EdgeInsets.all(30.0),
-    //2
+      //2
       child: Center(
         //3
         child: Column(
@@ -19,20 +19,20 @@ class EmptyGroceryScreen extends StatelessWidget {
             //TODO: Add empty image
             Flexible(
               child: AspectRatio(
-              aspectRatio: 1 / 1,
-              child: Image.asset('assets/fooderlich_assets/empty_list.png'),
+                aspectRatio: 1 / 1,
+                child: Image.asset('assets/fooderlich_assets/empty_list.png'),
               ),
             ),
             //TODO: Add empty screen title
             Text(
-                'No Groceries',
-            style: Theme.of(context).textTheme.headline6,
+              'No Groceries',
+              style: Theme.of(context).textTheme.headline6,
             ),
             //TODO: Add empty screen subtitle
             const SizedBox(height: 16.0),
             const Text(
-                'Shopping for ingridients?\n'
-                'Tap the + button to write them down!',
+              'Shopping for ingridients?\n'
+              'Tap the + button to write them down!',
               textAlign: TextAlign.center,
             ),
             //TODO: Add browse recipes button
@@ -47,7 +47,6 @@ class EmptyGroceryScreen extends StatelessWidget {
                 Provider.of<TabManager>(context, listen: false).goToRecipes();
               },
               child: const Text('Browse Recipes'),
-
             ),
           ],
         ),

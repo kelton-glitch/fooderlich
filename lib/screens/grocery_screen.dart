@@ -15,23 +15,21 @@ class GroceryScreen extends StatelessWidget {
       //6
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: (){
+        onPressed: () {
           //TODO: Present GroceryItemScreen
-          final manager = Provider.of<GroceryManager>(
-            context,
-            listen: false
-          );
+          final manager = Provider.of<GroceryManager>(context, listen: false);
           //2
           Navigator.push(
             context,
             //3
             MaterialPageRoute(
-                builder: (context) => GroceryItemScreen(
-                    onCreate: (item){
-                      manager.addItem(item);
-                      Navigator.pop(context);
-                    }, onUpdate: (item) {},
-                ),
+              builder: (context) => GroceryItemScreen(
+                onCreate: (item) {
+                  manager.addItem(item);
+                  Navigator.pop(context);
+                },
+                onUpdate: (item) {},
+              ),
             ),
           );
         },
@@ -40,19 +38,18 @@ class GroceryScreen extends StatelessWidget {
       body: buildGroceryScreen(),
     );
   }
+
   //TODO: Add buildGroceryScreen
   Widget buildGroceryScreen() {
-    return Consumer<GroceryManager>(
-        builder: (context, manager, child) {
-          //3
-          if (manager.groceryItems.isNotEmpty) {
-            //GroceryListScreen
-            return GroceryListScreen(manager: manager);
-          } else {
-            //4
-            return const EmptyGroceryScreen();
-          }
-        }
-    );
+    return Consumer<GroceryManager>(builder: (context, manager, child) {
+      //3
+      if (manager.groceryItems.isNotEmpty) {
+        //GroceryListScreen
+        return GroceryListScreen(manager: manager);
+      } else {
+        //4
+        return const EmptyGroceryScreen();
+      }
+    });
   }
-  }
+}

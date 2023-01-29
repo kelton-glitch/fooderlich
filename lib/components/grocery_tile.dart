@@ -16,7 +16,8 @@ class GroceryTile extends StatelessWidget {
     super.key,
     required this.item,
     this.onComplete,
-}) : textDecoration = item.isComplete ? TextDecoration.lineThrough : TextDecoration.none;
+  }) : textDecoration =
+            item.isComplete ? TextDecoration.lineThrough : TextDecoration.none;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class GroceryTile extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:[
+                children: [
                   Text(
                     item.name,
                     style: GoogleFonts.lato(
@@ -53,12 +54,10 @@ class GroceryTile extends StatelessWidget {
           //TODO: Add Row to group (quantity, checkbox)
           Row(
             children: [
-              Text(item.quantity.toString(),
-              style:
-                  GoogleFonts.lato(
-                    decoration: textDecoration,
-                    fontSize: 21.0
-                  ),
+              Text(
+                item.quantity.toString(),
+                style: GoogleFonts.lato(
+                    decoration: textDecoration, fontSize: 21.0),
               ),
               buildCheckbox()
             ],
@@ -67,21 +66,18 @@ class GroceryTile extends StatelessWidget {
       ),
     );
   }
+
   //buildImportance()
   Widget buildImportance() {
     if (item.importance == Importance.low) {
       return Text(
-          'Low',
+        'Low',
         style: GoogleFonts.lato(decoration: textDecoration),
       );
     } else if (item.importance == Importance.medium) {
-      return Text(
-        'Medium',
-        style: GoogleFonts.lato(
-          fontWeight: FontWeight.w800,
-          decoration: textDecoration
-        )
-      );
+      return Text('Medium',
+          style: GoogleFonts.lato(
+              fontWeight: FontWeight.w800, decoration: textDecoration));
     } else if (item.importance == Importance.high) {
       return Text(
         'High',
@@ -101,18 +97,11 @@ class GroceryTile extends StatelessWidget {
   Widget buildDate() {
     final dateFormatter = DateFormat('MMM dd h:mm a');
     final dateString = dateFormatter.format(item.date);
-    return Text(
-      dateString,
-      style: TextStyle(decoration: textDecoration)
-    );
+    return Text(dateString, style: TextStyle(decoration: textDecoration));
   }
 
   //buildCheckbox()
-  Widget buildCheckbox(){
-    return Checkbox(
-        value: item.isComplete,
-        onChanged: onComplete
-    );
+  Widget buildCheckbox() {
+    return Checkbox(value: item.isComplete, onChanged: onComplete);
   }
-
 }
