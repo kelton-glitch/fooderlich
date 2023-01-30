@@ -26,8 +26,18 @@ class AppRouter {
     initialLocation: '/login',
     //8
     routes: [
-      //TODO: Add login Route
-      //TODO: Add Onboarding Route
+      //login Route
+      GoRoute(
+          name: '/login',
+          path: '/login',
+        builder: (context, state) => const LoginScreen(),
+      ),
+      //Onboarding Route
+      GoRoute(
+        name: 'onboarding',
+          path: '/onboarding',
+        builder: (context, state) => const OnboardingScreen(),
+      ),
       //TODO: Add Home Route
     ],
     //Error Handler
