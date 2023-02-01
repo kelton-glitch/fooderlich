@@ -28,7 +28,7 @@ class AppRouter {
     routes: [
       //login Route
       GoRoute(
-          name: '/login',
+          name: 'login',
           path: '/login',
         builder: (context, state) => const LoginScreen(),
       ),
@@ -38,7 +38,21 @@ class AppRouter {
           path: '/onboarding',
         builder: (context, state) => const OnboardingScreen(),
       ),
-      //TODO: Add Home Route
+      //Home Route
+      GoRoute(
+        name: 'home',
+        path: '/:tab',
+        builder: (context, state) {
+          final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
+          return Home(
+            key: state.pageKey, currentTab:tab,
+          );
+        },
+        routes: [
+          // TODO: Add Item Subroute
+          // TODO: Add Profile Subroute
+        ],
+      )
     ],
     //Error Handler
     errorPageBuilder: (context, state){
@@ -51,7 +65,22 @@ class AppRouter {
           )
         )
           );
-    }
-    //TODO: Add Redirect Handler
+    },
+    //Redirect Handler
+    redirect: (state) {
+      final loggedIn = appStateManager.isLoggedIn;
+      final loggingIn = state.subloc == '/login';
+      if(loggingIn) return null;
+      if (!loggedIn) return loggingIn ? null : '/login';
+
+      final isOnboardingComplete =
+          appStateManager.isOnboardingComplete;
+      final onboarding = state.subloc == '/onboarding';
+      if (!isOnboardingComplete) {
+        return onboarding ? null : '/onboarding';
+  }
+      if (loggedIn || onboarding) return '/${FooderlichTab.explore}';
+      return null;
+}
   );
 }
