@@ -18,90 +18,102 @@ class AppRouter {
   );
   //4
   late final router = GoRouter(
-    //5
-    debugLogDiagnostics: true,
-    //6
-    refreshListenable: appStateManager,
-    //7
-    initialLocation: '/login',
-    //8
-    routes: [
-      //login Route
-      GoRoute(
+      //5
+      debugLogDiagnostics: true,
+      //6
+      refreshListenable: appStateManager,
+      //7
+      initialLocation: '/login',
+      //8
+      routes: [
+        //login Route
+        GoRoute(
           name: 'login',
           path: '/login',
-        builder: (context, state) => const LoginScreen(),
-      ),
-      //Onboarding Route
-      GoRoute(
-        name: 'onboarding',
+          builder: (context, state) => const LoginScreen(),
+        ),
+        //Onboarding Route
+        GoRoute(
+          name: 'onboarding',
           path: '/onboarding',
-        builder: (context, state) => const OnboardingScreen(),
-      ),
-      //Home Route
-      GoRoute(
-        name: 'home',
-        path: '/:tab',
-        builder: (context, state) {
-          final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
-          return Home(
-            key: state.pageKey, currentTab:tab,
-          );
-        },
-        routes: [
-          //Item Subroute
-          GoRoute(
-            name: 'item',
-            //1
-            path: 'item/id',
-            builder: (context, state) {
-              //2
-              final itemId = state.params['id'] ?? '';
-              //3
-              final item = groceryManager.getGroceryItem(itemId);
-              //4
-              return GroceryItemScreen(
-                originalItem: item,
-                  onCreate: (item){
-                //5
-                groceryManager.addItem(item);
-              }, onUpdate: (item){
-                //6
-                groceryManager.updateItem(item);
-              });
-            }
-          )
-          // TODO: Add Profile Subroute
-        ],
-      )
-    ],
-    //Error Handler
-    errorPageBuilder: (context, state){
-      return MaterialPage(
-        key: state.pageKey,
-        child:Scaffold(
-          body: Center (
-            child: Text(state.error.toString(),
+          builder: (context, state) => const OnboardingScreen(),
+        ),
+        //Home Route
+        GoRoute(
+          name: 'home',
+          path: '/:tab',
+          builder: (context, state) {
+            final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
+            return Home(
+              key: state.pageKey,
+              currentTab: tab,
+            );
+          },
+          routes: [
+            //Item Subroute
+            GoRoute(
+              name: 'item',
+              //1
+              path: 'item/:id',
+              builder: (context, state) {
+                //2
+                final itemId = state.params['id'] ?? '';
+                //3
+                final item = groceryManager.getGroceryItem(itemId);
+                //4
+                return GroceryItemScreen(
+                    originalItem: item,
+                    onCreate: (item) {
+                      //5
+                      groceryManager.addItem(item);
+                    },
+                    onUpdate: (item) {
+                      //6
+                      groceryManager.updateItem(item);
+                    });
+              },
+            ),
+            //Profile Subroute
+            GoRoute(
+              name: 'profile',
+              path: 'profile',
+              builder: (context, state) {
+                final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
+                return ProfileScreen(
+                    user: profileManager.getUser,
+                    currentTab: tab
+                );
+              },
+              routes:[
+                //TODO: Add WebView subroute
+              ],
             )
-          )
+          ],
         )
-          );
-    },
-    //Redirect Handler
-    redirect: (state) {
-      final loggedIn = appStateManager.isLoggedIn;
-      final loggingIn = state.subloc == '/login';
+      ],
+      //Error Handler
+      errorPageBuilder: (context, state) {
+        return MaterialPage(
+            key: state.pageKey,
+            child: Scaffold(
+                body: Center(
+                    child: Text(
+              state.error.toString(),
+            ))));
+      },
+      //Redirect Handler
+      redirect: (state) {
+        final loggedIn = appStateManager.isLoggedIn;
+        final loggingIn = state.subloc == '/login';
 
-      if (!loggedIn) return loggingIn ? null : '/login';
+        if (!loggedIn) return loggingIn ? null : '/login';
 
-      final isOnboardingComplete =
-          appStateManager.isOnboardingComplete;
-      final onboarding = state.subloc == '/onboarding';
-      if (!isOnboardingComplete) {
-        return onboarding ? null : '/onboarding';
-  }
-      if (loggingIn || onboarding) return '/${FooderlichTab.explore}';
-      return null;
-}
-  );
+        final isOnboardingComplete = appStateManager.isOnboardingComplete;
+        final onboarding = state.subloc == '/onboarding';
+        if (!isOnboardingComplete) {
+          return onboarding ? null : '/onboarding';
+        }
+        if (loggingIn || onboarding) return '/${FooderlichTab.explore}';
+        return null;
+      });
 }

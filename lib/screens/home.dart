@@ -80,7 +80,13 @@ class HomeState extends State<Home> {
           ),
         ),
         onTap: () {
-          // TODO: Navigate to profile screen
+          //Navigate to profile screen
+          context.goNamed(
+            'profile',
+            params: {
+              'tab' : '$currentTab',
+            }
+          );
         },
       ),
     );
