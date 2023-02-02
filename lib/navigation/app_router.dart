@@ -80,12 +80,15 @@ class AppRouter {
               builder: (context, state) {
                 final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
                 return ProfileScreen(
-                    user: profileManager.getUser,
-                    currentTab: tab
-                );
+                    user: profileManager.getUser, currentTab: tab);
               },
-              routes:[
-                //TODO: Add WebView subroute
+              routes: [
+                //Add WebView subroute
+                GoRoute(
+                  name: 'rw',
+                  path: 'rw',
+                  builder: (context, state) => const WebViewScreen(),
+                ),
               ],
             )
           ],

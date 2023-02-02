@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:go_router/go_router.dart';
 import '../components/circle_image.dart';
 import '../models/models.dart';
 
@@ -48,7 +48,11 @@ class ProfileScreenState extends State<ProfileScreen> {
             if (kIsWeb || Platform.isMacOS) {
               await launchUrl(Uri.parse('https://www.raywenderlich.com/'));
             } else {
-              // TODO: Navigate to WebView
+              //Navigate to WebView
+              context.goNamed(
+                'rw',
+                params: {'tab' : '${widget.currentTab}'},
+              );
             }
           },
         ),
