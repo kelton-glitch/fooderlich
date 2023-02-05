@@ -33,9 +33,9 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              buildTextField(username ?? '🍔 username'),
+              buildTextfield(username ?? '🍔 username'),
               const SizedBox(height: 16),
-              buildTextField('🎹 password'),
+              buildTextfield('🎹 password'),
               const SizedBox(height: 16),
               buildButton(context),
             ],
@@ -58,15 +58,14 @@ class LoginScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () async {
-          //Initiate Login
           Provider.of<AppStateManager>(context, listen: false)
-              .login('mockUsername', 'mockPassword');
+            .login('mockUsername', 'mockPassword');
         },
       ),
     );
   }
 
-  Widget buildTextField(String hintText) {
+  Widget buildTextfield(String hintText) {
     return TextField(
       cursorColor: rwColor,
       decoration: InputDecoration(

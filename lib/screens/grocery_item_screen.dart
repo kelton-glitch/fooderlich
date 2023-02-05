@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
-import 'package:go_router/go_router.dart';
+
 import '../components/grocery_tile.dart';
 import '../models/models.dart';
 
@@ -64,11 +65,10 @@ class GroceryItemScreenState extends State<GroceryItemScreen> {
                 widget.onCreate(groceryItem);
               }
 
-              //Navigate to home:ToBuy
               context.goNamed(
                 'home',
-                params:{
-                 'tab': '${FooderlichTab.toBuy}',
+                params: {
+                  'tab': '${FooderlichTab.toBuy}',
                 },
               );
             },

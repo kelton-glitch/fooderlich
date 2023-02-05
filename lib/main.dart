@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'navigation/app_router.dart';
+
 import 'fooderlich_theme.dart';
 import 'models/models.dart';
-// TODO: Import app_router
+import 'navigation/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +17,8 @@ class Fooderlich extends StatefulWidget {
 
   const Fooderlich({
     super.key,
-    required this.appStateManager});
+    required this.appStateManager,
+  });
 
   @override
   FooderlichState createState() => FooderlichState();
@@ -26,11 +27,10 @@ class Fooderlich extends StatefulWidget {
 class FooderlichState extends State<Fooderlich> {
   late final _groceryManager = GroceryManager();
   late final _profileManager = ProfileManager();
-  // AppRouter
   late final _appRouter = AppRouter(
-      widget.appStateManager,
-      _profileManager,
-      _groceryManager,
+    widget.appStateManager,
+    _profileManager,
+    _groceryManager,
   );
 
   @override
@@ -56,8 +56,8 @@ class FooderlichState extends State<Fooderlich> {
             theme = FooderlichTheme.light();
           }
 
-          // Router
           final router = _appRouter.router;
+
           return MaterialApp.router(
             theme: theme,
             title: 'Fooderlich',
