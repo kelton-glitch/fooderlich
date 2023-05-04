@@ -71,13 +71,18 @@ class GroceryTile extends StatelessWidget {
     if (item.importance == Importance.low) {
       return Text(
         'Low',
-        style: GoogleFonts.lato(decoration: textDecoration),
+        style: GoogleFonts.lato(
+          decoration: textDecoration
+        ),
       );
     } else if (item.importance == Importance.medium) {
       return Text(
         'Medium',
         style: GoogleFonts.lato(
-            fontWeight: FontWeight.w800, decoration: textDecoration),
+            fontWeight: FontWeight.w800, 
+            decoration: textDecoration, 
+            color: Colors.green,
+          ),
       );
     } else if (item.importance == Importance.high) {
       return Text(
