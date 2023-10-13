@@ -54,7 +54,7 @@ class GroceryListScreen extends StatelessWidget {
                 final itemId = manager.getItemId(index);
                 context.goNamed(
                   'item',
-                  params: {
+                  pathParameters: {
                     'tab': '${FooderlichTab.toBuy}',
                     'id': itemId,
                   },

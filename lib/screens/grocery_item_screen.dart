@@ -67,7 +67,7 @@ class GroceryItemScreenState extends State<GroceryItemScreen> {
 
               context.goNamed(
                 'home',
-                params: {
+                pathParameters: {
                   'tab': '${FooderlichTab.toBuy}',
                 },
               );

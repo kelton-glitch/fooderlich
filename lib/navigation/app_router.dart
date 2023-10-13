@@ -33,7 +33,7 @@ class AppRouter {
         name: 'home',
         path: '/:tab',
         builder: (context, state) {
-          final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
+          final tab = int.tryParse(state.pathParameters['tab'] ?? '') ?? 0;
           return Home(
             key: state.pageKey,
             currentTab: tab,
@@ -44,7 +44,7 @@ class AppRouter {
               name: 'item',
               path: 'item/:id',
               builder: (context, state) {
-                final itemId = state.params['id'] ?? '';
+                final itemId = state.pathParameters['id'] ?? '';
                 final item = groceryManager.getGroceryItem(itemId);
                 return GroceryItemScreen(
                   originalItem: item,
@@ -60,7 +60,7 @@ class AppRouter {
               name: 'profile',
               path: 'profile',
               builder: (context, state) {
-                final tab = int.tryParse(state.params['tab'] ?? '') ?? 0;
+                final tab = int.tryParse(state.pathParameters['tab'] ?? '') ?? 0;
                 return ProfileScreen(
                   user: profileManager.getUser,
                   currentTab: tab,

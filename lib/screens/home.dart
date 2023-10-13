@@ -33,7 +33,7 @@ class HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           'Fooderlich',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         actions: [
           profileButton(widget.currentTab),
@@ -47,7 +47,7 @@ class HomeState extends State<Home> {
           Provider.of<AppStateManager>(context, listen: false).goToTab(index);
           context.goNamed(
             'home',
-            params: {
+            pathParameters: {
               'tab': '$index',
             },
           );
@@ -83,7 +83,7 @@ class HomeState extends State<Home> {
         onTap: () {
           context.goNamed(
             'profile',
-            params: {
+            pathParameters: {
               'tab': '$currentTab',
             },
           );

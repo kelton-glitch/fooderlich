@@ -16,7 +16,7 @@ class GroceryScreen extends StatelessWidget {
         onPressed: () {
           context.goNamed(
             'item',
-            params: {
+            pathParameters: {
               'tab': '${FooderlichTab.toBuy}',
               'id': 'new',
             },

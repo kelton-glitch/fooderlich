@@ -53,7 +53,7 @@ class ProfileScreenState extends State<ProfileScreen> {
             } else {
               context.goNamed(
                 'rw',
-                params: {'tab': '${widget.currentTab}'},
+                pathParameters: {'tab': '${widget.currentTab}'},
               );
             }
           },

@@ -30,11 +30,11 @@ class RecipeThumbnail extends StatelessWidget {
           Text(
             recipe.title,
             maxLines: 1,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           Text(
             recipe.duration,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ],
       ),
